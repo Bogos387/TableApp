@@ -3,13 +3,12 @@
 
 #include <QAbstractTableModel>
 
+#include "CommonTypes.h"
+
 
 class MyTableModel : public QAbstractTableModel
 {
 public:
-    using cell_data_type = QString;
-    using row_type = QVector<cell_data_type>;
-    using matrix_type = QVector<row_type>;
 
     MyTableModel(QObject *parent = nullptr);
 
@@ -18,11 +17,11 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
 
-    void setTableData(matrix_type f_matrix);
+    void setTableData(CommonTypes::matrix_type f_matrix);
 
 
 private:
-    matrix_type matrix_;
+    CommonTypes::matrix_type matrix_;
 
 
 };

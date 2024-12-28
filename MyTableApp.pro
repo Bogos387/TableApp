@@ -22,6 +22,7 @@ SOURCES += \
     my-table-core.cpp
 
 HEADERS += \
+    CommonTypes.h \
     my-table-delegate.h \
     my-table-model.h \
     my-table-core.h

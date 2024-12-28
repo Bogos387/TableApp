@@ -8,6 +8,7 @@
 
 #include "my-table-model.h"
 #include "my-table-delegate.h"
+#include "CommonTypes.h"
 
 
 MyTableCore::MyTableCore()
@@ -62,9 +63,8 @@ void MyTableCore::addColorSetter()
 
 void MyTableCore::addMyData(int rows, int columns)
 {
-    MyTableModel::row_type vecColumns(columns);
-    MyTableModel::matrix_type matrix(rows, vecColumns);
-
+    CommonTypes::row_type vecColumns(columns);
+    CommonTypes::matrix_type matrix(rows, vecColumns);
 
     for (int i = 0; i < rows; ++i)
     {
