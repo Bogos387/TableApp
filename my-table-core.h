@@ -10,6 +10,8 @@ class QTableView;
 class MyTableModel;
 class MyTableDelegate;
 
+class IDataReader;
+
 
 class MyTableCore
 {
@@ -18,7 +20,7 @@ public:
     ~MyTableCore();
 
     void addColorSetter();
-    void addMyData(int rows, int columns);
+    void addMyData();
 
 
 private:
@@ -27,6 +29,8 @@ private:
     QTableView *view_;
     MyTableModel *myModel_;
     MyTableDelegate *myDelegate_;
+
+    QScopedPointer<IDataReader> dataReader_;
 
 };
 

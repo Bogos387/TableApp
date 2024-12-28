@@ -57,7 +57,7 @@ QVariant MyTableModel::headerData(int section, Qt::Orientation orientation, int 
 }
 
 
-void MyTableModel::setTableData(matrix_type f_matrix)
+void MyTableModel::setTableData(CommonTypes::matrix_type f_matrix)
 {
     beginResetModel();
     this->matrix_ = f_matrix;

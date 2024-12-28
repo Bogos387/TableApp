@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 
     MyTableCore myTable;
     myTable.addColorSetter();
-    myTable.addMyData(100, 100);
+    myTable.addMyData();
 
     return a.exec();
 }
