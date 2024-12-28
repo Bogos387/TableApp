@@ -33,7 +33,7 @@ MyTableCore::MyTableCore()
     vLayout_->addWidget(view_);
 
     //
-    dataReader_.reset(new DefaultDataReader(10, 10));
+    dataReader_.reset(new DefaultDataReader(100, 100));
 }
 
 
