@@ -16,6 +16,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    DefaultDataReader.cpp \
+    IDataReader.cpp \
     main.cpp \
     my-table-delegate.cpp \
     my-table-model.cpp \
@@ -23,6 +25,8 @@ SOURCES += \
 
 HEADERS += \
     CommonTypes.h \
+    DefaultDataReader.h \
+    IDataReader.h \
     my-table-delegate.h \
     my-table-model.h \
     my-table-core.h

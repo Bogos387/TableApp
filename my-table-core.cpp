@@ -10,6 +10,8 @@
 #include "my-table-delegate.h"
 #include "CommonTypes.h"
 
+#include "DefaultDataReader.h"
+
 
 MyTableCore::MyTableCore()
     : fonWidget(new QWidget())
@@ -17,6 +19,7 @@ MyTableCore::MyTableCore()
     , view_(new QTableView())
     , myModel_(new MyTableModel(view_))
     , myDelegate_(new MyTableDelegate(view_))
+    , dataReader_(nullptr)
 {
     fonWidget->setLayout(vLayout_);
     fonWidget->resize(700, 400);
@@ -28,6 +31,9 @@ MyTableCore::MyTableCore()
     view_->setItemDelegate(myDelegate_);
 
     vLayout_->addWidget(view_);
+
+    //
+    dataReader_.reset(new DefaultDataReader(10, 10));
 }
 
 
@@ -61,20 +67,10 @@ void MyTableCore::addColorSetter()
 }
 
 
-void MyTableCore::addMyData(int rows, int columns)
+void MyTableCore::addMyData()
 {
-    CommonTypes::row_type vecColumns(columns);
-    CommonTypes::matrix_type matrix(rows, vecColumns);
-
-    for (int i = 0; i < rows; ++i)
-    {
-        for (int j = 0; j < columns; ++j)
-        {
-            matrix[i][j] = QString("I: %1,%2").arg(i + 1).arg(j + 1);
-        }
-    }
-
-    myModel_->setTableData(matrix);
+    if (dataReader_)
+        myModel_->setTableData(dataReader_->getData());
 }
 
 
