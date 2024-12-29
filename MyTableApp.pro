@@ -19,17 +19,17 @@ SOURCES += \
     DefaultDataReader.cpp \
     IDataReader.cpp \
     main.cpp \
-    my-table-delegate.cpp \
-    my-table-model.cpp \
-    my-table-core.cpp
+    MyTableDelegate.cpp \
+    MyTableModel.cpp \
+    myTableCore.cpp
 
 HEADERS += \
     CommonTypes.h \
     DefaultDataReader.h \
     IDataReader.h \
-    my-table-delegate.h \
-    my-table-model.h \
-    my-table-core.h
+    MyTableDelegate.h \
+    MyTableModel.h \
+    MyTableCore.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
