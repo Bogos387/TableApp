@@ -1,4 +1,4 @@
-#include "my-table-core.h"
+#include "MyTableCore.h"
 
 #include <QWidget>
 #include <QVBoxLayout>
@@ -6,8 +6,8 @@
 #include <QLineEdit>
 #include <QPushButton>
 
-#include "my-table-model.h"
-#include "my-table-delegate.h"
+#include "MyTableModel.h"
+#include "MyTableDelegate.h"
 #include "CommonTypes.h"
 
 #include "DefaultDataReader.h"

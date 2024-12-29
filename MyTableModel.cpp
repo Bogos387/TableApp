@@ -1,4 +1,4 @@
-#include "my-table-model.h"
+#include "MyTableModel.h"
 
 
 MyTableModel::MyTableModel(QObject *parent)
@@ -10,6 +10,8 @@ MyTableModel::MyTableModel(QObject *parent)
 
 int MyTableModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent)
+
     if (!matrix_.empty())
         return static_cast<int>(matrix_.size());
 
@@ -19,6 +21,8 @@ int MyTableModel::rowCount(const QModelIndex &parent) const
 
 int MyTableModel::columnCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent)
+
     if (!matrix_.empty())
         return static_cast<int>(matrix_[0].size());
 
